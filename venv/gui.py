@@ -5,7 +5,7 @@ import tkinter.messagebox
 import datetime
 
 class Gui():
-    def __init__(self,master):
+    def __init__(self,main):
 
         self.mydb = mysql.connector.connect(
 
@@ -25,12 +25,12 @@ class Gui():
 
         self.Show_count=0
         self.insert_count=0
-        self.Company_name = Label(master,text='ABCD Lmt.', font=("Helvetica", 30, "bold"), foreground='black', bg='#33E6FF')
+        self.Company_name = Label(main,text='ABCD Lmt.', font=("Helvetica", 30, "bold"), foreground='black', bg='#33E6FF')
         self.Company_name.grid(row=0,columnspan=3)
 
-        self.Insert_data = Button(master, text="Insert Employee data", command=self.Insert, pady=5,font=("Helvetica", 10, "bold"), bg="yellow")
+        self.Insert_data = Button(main, text="Insert Employee data", command=self.Insert, pady=5,font=("Helvetica", 10, "bold"), bg="yellow")
         self.Insert_data.grid(row=3, column=0,padx=30,pady=20)
-        self.Show_data = Button(master, text="Show Employee data", command=self.Show, pady=5,font=("Helvetica", 10, "bold"), bg="yellow")
+        self.Show_data = Button(main, text="Show Employee data", command=self.Show, pady=5,font=("Helvetica", 10, "bold"), bg="yellow")
         self.Show_data.grid(row=3, column=2,pady=20)
 
 
