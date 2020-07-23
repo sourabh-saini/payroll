@@ -53,23 +53,23 @@ class forcast:
 
 class GUI(forcast):
 
-    def __init__(self,master):
+    def __init__(self,main):
         self.city=''
 
         self.cityimg = PhotoImage(file="city.png")
         self.cityimg = self.cityimg.subsample(8,8)
         self.img = PhotoImage(file="img_183020.png")
         self.img = self.img.subsample(30,30)
-        self.title = Label(master,text="Weather Forecasting", font=("Helvetica", 30, "bold"), foreground='yellow', bg='#33E6FF')
+        self.title = Label(main,text="Weather Forecasting", font=("Helvetica", 30, "bold"), foreground='yellow', bg='#33E6FF')
         self.title.grid(row=0,column=2,columnspan=5)
-        self.City = Label(master,text="Enter city name", font=("Helvetica", 18, "bold"), bg="#33E6FF")
+        self.City = Label(main,text="Enter city name", font=("Helvetica", 18, "bold"), bg="#33E6FF")
         self.City.grid(row=1,column=4,rowspan=2)
         self.City.config(image=self.cityimg, compound=RIGHT)
-        self.entryCity = ttk.Combobox(master, font=("Helvetica", 8, "bold"), textvariable = self.city)
+        self.entryCity = ttk.Combobox(main, font=("Helvetica", 8, "bold"), textvariable = self.city)
         self.entryCity['values']=()
-        #self.entryCity = Entry(master, font=("Helvetica", 8, "bold"))
+        #self.entryCity = Entry(main, font=("Helvetica", 8, "bold"))
         self.entryCity.grid(row=3,column=4)
-        self.button = Button(master,text="Submit",command=self.onClick,pady=5,font=("Helvetica",10,"bold"),bg="yellow")
+        self.button = Button(main,text="Submit",command=self.onClick,pady=5,font=("Helvetica",10,"bold"),bg="yellow")
         self.button.grid(row=4,column=4,rowspan=2)
         self.button.config(image=self.img,compound=RIGHT)
         self.button.bind("<Enter>", self.on_enter)
@@ -103,7 +103,7 @@ class GUI(forcast):
         self.des.clear()
         self.wind.clear()
 
-    def disp(self,master):
+    def disp(self,main):
         if self.code =="200":
             self.frame = Frame(root,width=700,height=60,relief=SUNKEN,pady=10,padx=10,background="#33E6FF")
             self.frame.grid(row=6,column=4)
